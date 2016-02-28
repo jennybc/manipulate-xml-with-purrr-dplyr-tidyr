@@ -127,15 +127,15 @@ lengths(rows_df$nodeset)
 #' The main manipulation:
 #'
 #' * Use `purrr::map()` inside `dplyr::mutate()` to unpack the XML.
-#'   - extract the (API-mangled) column name from the node name
-#'   - extract the cell text from the node contents (yes, with the list feed
-#'     it's always text)
-#'   - create a new variable `i` as a within-row cell counter
+#'     - extract the (API-mangled) column name from the node name
+#'     - extract the cell text from the node contents (yes, with the list feed
+#'       it's always text)
+#'     - create a new variable `i` as a within-row cell counter
 #' * Use `dplyr::select()` to retain only needed variables. This is where we
 #'   can drop the `nodeset` list-column. It has served its purpose.
 #' * Use `tidyr::unnest()` to achieve this:
-#'   - one data frame row per row of spreadsheet --> one data frame row per
-#'   nonempty cell of spreadsheet
+#'     - one data frame row per row of spreadsheet --> one data frame row per
+#'       nonempty cell of spreadsheet
 (cells_df <- rows_df %>%
   mutate(col_name_raw = nodeset %>% map(~ xml_name(.)),
          cell_text = nodeset %>% map(~ xml_text(.)),
