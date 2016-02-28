@@ -50,8 +50,7 @@ library(xmlview) ## highly optional for this example!
 #' ### The list feed
 #'
 #' There are three ways to get information out of a Google spreadsheet and today
-#' we are dealing with the ["list feed"](#'
-#' \href{https://developers.google.com/google-apps/spreadsheets/data#work_with_list-based_feeds),
+#' we are dealing with the ["list feed"](https://developers.google.com/google-apps/spreadsheets/data#work_with_list-based_feeds),
 #' which is arguably the most annoying of the bunch. Why do we use it? Let's
 #' just assume it's a job that needs to be done.
 #'
