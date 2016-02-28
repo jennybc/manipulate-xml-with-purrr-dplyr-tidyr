@@ -102,9 +102,10 @@ rc <- read_xml(content(req, as = "text", encoding = "UTF-8"))
 ns <- xml_ns_rename(xml_ns(rc), d1 = "feed")
 
 #' Behold the XML. We'll be going after those `entry` nodes -- specifically the
-#' sub-nodes associated with the `gsx` namespace. *OK not clear if this works
-#' in markdown, but leaving here for anyone who actually walks through the
-#' example.*
+#' sub-nodes associated with the `gsx` namespace. *OK not clear if this works in
+#' markdown, but leaving here for anyone who actually walks through the example.
+#' To see what I see, check out
+#' [`rc.html` via rawgit](https://rawgit.com/jennybc/manipulate-xml-with-purrr-dplyr-tidyr/master/rc.html).*
 xml_view(rc)
 
 #' Create a list. Each component holds a nodeset for one spreadsheet row. Use
